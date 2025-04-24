@@ -3,18 +3,18 @@ Organize os dados CSV de Lista para Colunas e Colunas Para Lista Facilita muito 
 Link de Download
 https://drive.google.com/file/d/1KxQVMpU3cdU0XB2ys5aaQLeANDeGUcZB/view?usp=sharing
 
+/------------------------------------/
 
-
-import sys
-import pandas as pd
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel, QLineEdit,
+    import sys
+    import pandas as pd
+    from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel, QLineEdit,
                              QPushButton, QFileDialog, QVBoxLayout, QWidget,
                              QMessageBox, QHBoxLayout, QProgressBar, QComboBox)
-from PyQt5.QtCore import Qt, QPropertyAnimation, QEasingCurve, QEvent, pyqtSignal, QTimer
-from PyQt5.QtGui import QIcon, QPixmap, QScreen
-import os
+    from PyQt5.QtCore import Qt, QPropertyAnimation, QEasingCurve, QEvent, pyqtSignal, QTimer
+    from PyQt5.QtGui import QIcon, QPixmap, QScreen
+    import os
 
-def resource_path(relative_path):
+    def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
@@ -23,8 +23,8 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
-class MainWindow(QMainWindow):
-    closedSignal = pyqtSignal()
+    class MainWindow(QMainWindow):
+        closedSignal = pyqtSignal()
 
     def __init__(self):
         super().__init__()
@@ -209,8 +209,8 @@ class MainWindow(QMainWindow):
     def _close_app(self):
         self.closedSignal.emit()
 
-class SplashScreen(QWidget):
-    def __init__(self, main_window):
+    class SplashScreen(QWidget):
+      def __init__(self, main_window):
         super().__init__()
         self.main_window = main_window
         self.setWindowTitle("Carregando...")
@@ -280,10 +280,10 @@ class SplashScreen(QWidget):
         self.main_window.show()
         self.close()
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    app_icon = QIcon(resource_path('icon/csv.png'))
-    app.setWindowIcon(app_icon)
+    if __name__ == '__main__':
+      app = QApplication(sys.argv)
+      app_icon = QIcon(resource_path('icon/csv.png'))
+      app.setWindowIcon(app_icon)
 
     main_window = MainWindow()
     splash = SplashScreen(main_window)
