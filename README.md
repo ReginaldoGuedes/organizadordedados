@@ -3,8 +3,6 @@ Organize os dados CSV de Lista para Colunas e Colunas Para Lista Facilita muito 
 Link de Download
 https://drive.google.com/file/d/1KxQVMpU3cdU0XB2ys5aaQLeANDeGUcZB/view?usp=sharing
 
-/------------------------------------/
-
     import sys
     import pandas as pd
     from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel, QLineEdit,
@@ -286,7 +284,7 @@ https://drive.google.com/file/d/1KxQVMpU3cdU0XB2ys5aaQLeANDeGUcZB/view?usp=shari
       app.setWindowIcon(app_icon)
 
     main_window = MainWindow()
-    splash = SplashScreen(main_window)
-    main_window.closedSignal.connect(app.quit)
-    splash.show()
-    sys.exit(app.exec_())
+        splash = SplashScreen(main_window)
+        main_window.closedSignal.connect(app.quit)
+        splash.show()
+        sys.exit(app.exec_())
